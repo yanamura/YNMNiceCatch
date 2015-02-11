@@ -66,7 +66,6 @@
     XCTAssertEqual(@"test", result);
 }
 
-
 //MARK: Helper Methods
 - (void)exceptionRaised
 {

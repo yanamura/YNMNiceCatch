@@ -12,12 +12,10 @@ NSString* const YNM_EXCEPTION_NOTIFICATION = @"exception_notification";
 
 @implementation YNMNiceCatch
 
-+ (id)exceptionNotification:(id (^)(void))block
++ (nullable id)exceptionNotification:(__nullable id (^ __nonnull)(void))block
 {
     @try {
-        if (block) {
-            return block();
-        }
+        return block();
     }
     @catch (NSException *exception) {
         [[NSNotificationCenter defaultCenter] postNotificationName:YNM_EXCEPTION_NOTIFICATION object:nil];
@@ -25,15 +23,14 @@ NSString* const YNM_EXCEPTION_NOTIFICATION = @"exception_notification";
     return nil;
 }
 
-+ (id)niceCatch:(id (^)(void))block
++ (nullable id)niceCatch:(__nullable id (^ __nonnull)(void))block
 {
     @try {
-        if (block) {
-            return block();
-        }
+        return block();
     }
     @catch (NSException *exception) {
         // nice catch!
+        NSLog(@"%@",exception);
     }
     return nil;
 }

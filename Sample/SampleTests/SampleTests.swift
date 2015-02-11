@@ -24,8 +24,8 @@ class SampleTests: XCTestCase {
 
     func testNiceCatch() {
         YNMNiceCatch.niceCatch({
-            () -> AnyObject! in
-                NSException.raise("ex", format:"exception raised", arguments:getVaList([]))
+            () -> AnyObject? in
+                NSException.raise("ex", format:"exception raised %@", arguments:getVaList(["http://google.com"]))
                 return nil
         })
 
@@ -34,7 +34,7 @@ class SampleTests: XCTestCase {
 
     func testExceptionNotification() {
         self.isExceptionRaised = false
-
+        var hoge:String
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "exceptionRaised",
@@ -43,7 +43,7 @@ class SampleTests: XCTestCase {
         )
 
         YNMNiceCatch.exceptionNotification { () -> AnyObject! in
-            NSException.raise("ex", format:"exception raised", arguments:getVaList([]))
+            NSException.raise("ex", format:"exception raised %@", arguments:getVaList(["hogei"]))
             return nil;
         }
 

@@ -16,13 +16,13 @@ FOUNDATION_EXPORT const unsigned char YNMNiceCatchVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <YNMNiceCatch/PublicHeader.h>
 
-extern NSString* const YNM_EXCEPTION_NOTIFICATION;
+extern __nonnull NSString* const YNM_EXCEPTION_NOTIFICATION;
 
 @import Foundation;
 
 @interface YNMNiceCatch : NSObject
 
-+ (id)exceptionNotification:(id (^)(void))block;
-+ (id)niceCatch:(id (^)(void))block;
++ (nullable id)exceptionNotification:(__nullable id (^ __nonnull)(void))block;
++ (nullable id)niceCatch:(__nullable id (^ __nonnull)(void))block;
 
 @end

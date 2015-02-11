@@ -17,20 +17,20 @@ NSNotificationCenter.defaultCenter().addObserver(
             name: YNM_EXCEPTION_NOTIFICATION,
             object: nil)
 
-YNMNiceCatch.exceptionNotification { () -> AnyObject! in
+YNMNiceCatch.exceptionNotification { () -> AnyObject? in
   // call method which may raise exception
 }
 ```
 
 Nice Catch
 ```
-YNMNiceCatch.niceCatch { () -> AnyObject! in
+YNMNiceCatch.niceCatch { () -> AnyObject? in
   // call method which may raise exception
 }
 ```
 
 ## How to use
-To use Acom to your iOS applications, follow these 4 easy steps:
+To use this Library to your iOS applications, follow these 4 easy steps:
 
 1. Clone the YNMNiceCatch repository
 2. Add YNMNiceCatch.xcodeproj to your test target
